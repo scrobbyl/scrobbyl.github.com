@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Scrobbyl, Scrobbling Vinyl</title>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            $(function() {
+                var whichFirst = Math.floor(Math.random() * 3);
+                var links = ['<a class="person" href="http://github.com/alastair">Alastair Porter</a>', '<a href="http://twitter.com/gregsabo">Greg Sabo</a>'];
+                outString = "";
+                
+                if (whichFirst == 0) {
+                    outString = outString + links.pop();
+                } else {
+                    outString = outString + links.shift();
+                }
+                outString = outString + " and ";
+                outString = outString + links.pop();
+                $("span.mixer").empty().append(outString);
+            })
+            
+        </script>
+        
+        
+        <style type="text/css">
+        
+            body {
+                background-color: black;
+                color: white;
+                font-family: Helvetica, Arial, Verdana, sans-serif;
+                font-size: 1.2em;
+                text-align: center;
+            }
+            
+            a {
+                color: white;
+            }
+            
+            h1 {
+                font-size: 3em;
+            }
+            
+            a:visited {
+                color: gray;
+            }
+            
+            img.setup {
+                width: 500px;
+                border: 3px solid white;
+            }
+        
+        </style>
+
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-19175200-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+
+        
+    </head>
+    <body>
+        <h1>Scrobbyl</h1>
+        <h2>Scratch n' Share</h2>
+        <p>
+            Scrobbyl makes it easy to keep Last.fm up-to-date on what you're listening to on vinyl.
+        </p>
+        <h2>How does it work?</h2>
+
+        <img class="setup" src="turntable-setup-small.jpg" alt="An Example Scrobbyl setup" />
+        <p>
+            Scrobbyl uses the line-in port on your computer to listen to what's playing on your turntable. It periodically takes a sonic footprint of the music and identifies the track info using the <a href="http://the.echonest.com/">Echo Nest API</a>. It then scrobbles the track to your <a href="http://www.last.fm/">Last.fm</a> account.
+        </p>
+        <p>
+            <a href="http://github.com/alastair/scrobbyl">Get the code</a>.
+        </p>
+
+        <p>
+            Download for OS X coming soon.
+        </p>
+        <p>
+            Made by <span class="mixer"><a class="person" href="http://github.com/alastair">Alastair Porter</a> and <a href="http://twitter.com/gregsabo">Greg Sabo</a></span> at <a class="person" href="http://boston.musichackday.org/">Music Hack Day Boston 2010</a>.
+        </p>
+
+    </body>
+</html>
